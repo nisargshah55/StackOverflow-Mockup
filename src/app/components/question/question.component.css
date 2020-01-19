@@ -1,0 +1,14 @@
+.container {
+    display:flex;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .container > div {
+    margin:1rem;
+  }
+  .votes, .answers, .views {
+    width:4rem;
+  }
+.questions {
+  width: 100%;
+}

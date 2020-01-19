@@ -1,0 +1,73 @@
+<div class="col-md-12">
+    <h1 class="text-center">Top Questions [Featured]</h1>
+</div>
+<hr>
+<div class="container" *ngFor="let item of pageData| keyvalue; let i = index">
+    <div class="votes">
+        <button type="button" class="btn btn-light">
+            {{item.value.score}}
+            <div class="badge badge-light">votes</div>
+        </button>
+        <!-- <div>{{item.value.score}}</div>
+        <div>votes</div> -->
+    </div>
+    <div class="answers">
+        <button type="button" class="btn btn-success">
+            {{item.value.answer_count}}
+            <div>answers</div>
+        </button>
+        <!-- <div>{{item.value.answer_count}}</div>
+        <div>answers</div> -->
+    </div>
+    <div class="views">
+        <button type="button" class="btn btn-light">
+            {{item.value.view_count}}
+            <div class="badge badge-light">views</div>
+        </button>
+        <!-- <div>{{item.value.view_count}}</div>
+        <div>views</div> -->
+    </div>
+    <div class="questions">
+        <button type="button" class="btn btn-primary">
+            +{{item.value.bounty_amount}}
+        </button>
+        <!-- <div>+{{item.value.bounty_amount}} -->
+        <span>{{item.value.title}}</span>
+        <!-- </div> -->
+        <div>
+            <span *ngFor="let tag of item.value.tags">
+                <span class="badge badge-pill badge-info">
+                    {{tag}}
+                </span>&nbsp;
+            </span>
+            <span class="text-right">
+                modified {{item.value.last_activity_date | date}}[{{item.value.owner.display_name}}]
+            </span>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="container" *ngFor="let item of pageData| keyvalue; let i = index">
+    <div class="col-md-2 votes">
+        <div>{{item.value.score}}</div>
+        <div>votes</div>
+    </div>
+    <div class="col-md-2 answers">
+        <div>{{item.value.answer_count}}</div>
+        <div>answers</div>
+    </div>
+    <div class="col-md-2 views">
+        <div>{{item.value.view_count}}</div>
+        <div>views</div>
+    </div>
+    <div class="col-md-12 questionDiv">
+        <div>+{{item.value.bounty_amount}}
+            <span>{{item.value.title}}</span>
+            <div>{{item.value.tags}}
+                <span class="text-right">
+                    modified {{item.value.last_activity_date | date}}[{{item.value.owner.display_name}}]
+                </span>
+            </div>
+        </div>
+    </div>
+</div> -->
